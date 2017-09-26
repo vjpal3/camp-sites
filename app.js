@@ -18,9 +18,10 @@ mongoose.Promise = global.Promise;
 var commentRoutes = require("./routes/comments"),    
     campgroundRoutes = require("./routes/campgrounds"), 
     indexRoutes = require("./routes/index");
-    
+
+mongoose.connect(process.env.DATABASEURL);   
 //mongoose.connect("mongodb://localhost/yelp_camp", {useMongoClient: true});
-mongoose.connect("mongodb://vpal:Camp123@ds149844.mlab.com:49844/yelpcamp", {useMongoClient: true});
+//mongoose.connect("mongodb://vpal:Camp123@ds149844.mlab.com:49844/yelpcamp", {useMongoClient: true});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
